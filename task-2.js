@@ -9,11 +9,11 @@ const ingredients = [
 
 const itemList = document.getElementById('ingredients');
 
-const products = ingredients.map((ingredient) => {
- const items = document.createElement("li");
-  // items.innerHTML = ingredient;
-  items.insertAdjacentHTML('afterbegin', ingredient)
-  itemList.append(items)
+const products = [];
+ingredients.map((ingredient) => {
+  let items = document.createElement("li");
+  items.textContent = ingredient;
+  products.push(items);
 })
 
-  console.log(itemList);
+itemList.append(...products)
